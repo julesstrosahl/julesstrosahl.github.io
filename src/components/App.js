@@ -23,11 +23,12 @@ class Parallax extends Component
           <div style={{flexBasis:"100%",height:"0"}}></div>
           <div style={{marginTop:"2%"}}className="hc">
             <a className="icon" onClick={()=>this.props.toggleModalRef()}>
-              <i title="Resume" className="fas fa-file"/>
+              <i title="Resume" className="fas fa-id-card"/>
             </a>
+            {/*
             <Link to="/portfolio/" className="icon">
               <i title="Portfolio" className="fas fa-folder-open"/>
-            </Link>
+            </Link>*/}
           </div>
           <div style={{flexBasis:"100%",height:"0"}}></div>
           <div style={{marginTop:"1%"}}className="hc">
