@@ -2,7 +2,9 @@ import React, {Component} from 'react';
 import { Document, Page,pdfjs } from 'react-pdf';
 import './App.css';
 import resume from "../files/Resume.pdf";
-import {Link} from "gatsby";
+import {Link, withAssetPrefix} from "gatsby";
+import Typist from 'react-typist';
+import "react-typist/dist/Typist.css";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -15,10 +17,13 @@ class Parallax extends Component
         <img src={require('../images/jsicon.png')} style={{maxHeight: '20%',maxWidth:'20%', position: 'absolute'}} />
         <div style={{height:"100%",margin:'0px',padding:'0px'}}>
           <div style={{height: '50%',width:"100%",alignItems:"flex-end",backgroundColor:"transparent"}}className="jumbotron hc">
-            <div className="vc">
-            <img src={require('../images/gradfacemasked.png')} style={{maxHeight:"30%",maxWidth:"30%"}} className="img-circle" />
-            <h1 style={{textShadow:"2px 2px 2px #fff"}}>Student.<br />Developer.</h1>
-            </div>
+              <div style={{display:"flex",justifyContent:"flex-end",width:"50%"}} >
+              <img src={require('../images/gradfacemasked.png')} style={{maxHeight:"30%",maxWidth:"30%"}} className="img-circle" /></div>
+              <div style={{width:"50%"}}>
+              <h1 style={{color:"white",textShadow:"0px 0px 4px #000000"}}>
+              <Typist>
+                student.<br/>developer.
+              </Typist></h1></div>
           </div>
           <div style={{flexBasis:"100%",height:"0"}}></div>
           <div style={{marginTop:"2%"}}className="hc">
