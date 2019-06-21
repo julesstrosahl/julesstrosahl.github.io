@@ -5,6 +5,7 @@ import resume from "../files/Resume.pdf";
 import {Link, withAssetPrefix} from "gatsby";
 import Typist from 'react-typist';
 import "react-typist/dist/Typist.css";
+import Jumbotron from 'react-bootstrap/Jumbotron'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -14,17 +15,20 @@ class Parallax extends Component
   {
     return(
       <div style={{backgroundImage:`url('${require('../images/bg.jpg')}')`}} className="parallax">
-        <img src={require('../images/jsicon.png')} style={{maxHeight: '20%',maxWidth:'20%', position: 'absolute'}} />
+        {/*<img src={require('../images/jsicon.png')} style={{maxHeight: '20%',maxWidth:'20%', position: 'absolute'}} />*/}
+        <div className="unselectable jsicon">
+          {"{js}"}
+        </div>
         <div style={{height:"100%",margin:'0px',padding:'0px'}}>
-          <div style={{height: '50%',width:"100%",alignItems:"flex-end",backgroundColor:"transparent"}}className="jumbotron hc">
+          <Jumbotron style={{height: '50%',width:"100%",alignItems:"flex-end",backgroundColor:"transparent"}}className="hc">
               <div style={{display:"flex",justifyContent:"flex-end",width:"50%"}} >
-              <img src={require('../images/gradfacemasked.png')} style={{maxHeight:"30%",maxWidth:"30%"}} className="img-circle" /></div>
+              <img src={require('../images/gradfacemasked.png')} style={{maxHeight:"30%",maxWidth:"30%"}} className="img-circle unselectable" /></div>
               <div style={{width:"50%"}}>
-              <h1 style={{color:"white",textShadow:"0px 0px 4px #000000"}}>
+              <h1 className="unselectable" style={{fontSize:"5vw",color:"white",textShadow:"0px 0px 4px #000000"}}>
               <Typist>
                 student.<br/>developer.
               </Typist></h1></div>
-          </div>
+          </Jumbotron>
           <div style={{flexBasis:"100%",height:"0"}}></div>
           <div style={{marginTop:"2%"}}className="hc">
             <a className="icon" onClick={()=>this.props.toggleModalRef()}>
