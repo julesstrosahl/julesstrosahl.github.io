@@ -3,6 +3,7 @@ import { Document, Page,pdfjs } from 'react-pdf';
 import './App.css';
 import resume from "../files/Resume.pdf";
 import {Link, withAssetPrefix} from "gatsby";
+import Img from "gatsby-image"
 import Typist from 'react-typist';
 import "react-typist/dist/Typist.css";
 import Jumbotron from 'react-bootstrap/Jumbotron'
@@ -21,8 +22,9 @@ class Parallax extends Component
         </div>
         <div style={{height:"100%",margin:'0px',padding:'0px'}}>
           <Jumbotron style={{height: '50%',width:"100%",alignItems:"flex-end",backgroundColor:"transparent"}}className="hc vc">
-              <div style={{display:"flex",justifyContent:"flex-end",width:"35%"}} >
-              <img src={require('../images/gradfacemasked.png')} style={{maxHeight:"25vmin",maxWidth:"25vmin"}} className="img-circle unselectable" /></div>
+                {/*
+                <img src={require('../images/gradfacemasked.png')} style={{maxHeight:"25vmin",maxWidth:"25vmin"}} className="img-circle unselectable" />*/}
+                <Img style={{width:"50%",justifyContent:"flex-end"}} imgStyle={{width:"35vmin"}}fluid={this.props.data.imageOne.childImageSharp.fluid}/>
               <div style={{width:"50%"}}>
               <h1 className="unselectable" style={{fontSize:"7vmin",color:"white",textShadow:"0px 0px 4px #000000"}}>
               <Typist>
@@ -84,7 +86,7 @@ class App extends Component {
   render() {
   return (
     <div>
-      <Parallax toggleModalRef={()=>this.toggleModal()}/>
+      <Parallax data={this.props.data} toggleModalRef={()=>this.toggleModal()}/>
       <DocModal show = {this.state.showModal} toggleModalRef={()=>this.toggleModal()}/>
     </div>);
   }

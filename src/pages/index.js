@@ -1,14 +1,14 @@
 import React from "react"
 import App from '../components/App.js'
 import Head from "../components/Head.js"
-
+import Img from "gatsby-image"
 class IndexPage extends React.Component
 {
-  constructor()
+  constructor({data})
   {
     super();
 
-    this.state={show:false};
+    this.state={show:false,data:{data}};
   }
   componentDidMount()
   {
@@ -19,9 +19,21 @@ class IndexPage extends React.Component
   return(
     <div>
       <Head/>
-      <App/>
+      <App data={this.state.data.data}/>
     </div>);
   }
 }
 
 export default IndexPage
+
+export const pageQuery = graphql`
+  query {
+    imageOne: file(relativePath: { eq: "gradfacemasked.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 250) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`

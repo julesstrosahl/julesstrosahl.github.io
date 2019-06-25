@@ -43,6 +43,7 @@ body
 
 .jsicon
 {
+  z-index: 1000;
   font-family: 'Encode Sans Condensed', sans-serif;
   font-size:15vmin;
   position:absolute;
