@@ -20,11 +20,11 @@ class Parallax extends Component
           {"{js}"}
         </div>
         <div style={{height:"100%",margin:'0px',padding:'0px'}}>
-          <Jumbotron style={{height: '50%',width:"100%",alignItems:"flex-end",backgroundColor:"transparent"}}className="hc">
-              <div style={{display:"flex",justifyContent:"flex-end",width:"50%"}} >
-              <img src={require('../images/gradfacemasked.png')} style={{maxHeight:"30%",maxWidth:"30%"}} className="img-circle unselectable" /></div>
+          <Jumbotron style={{height: '50%',width:"100%",alignItems:"flex-end",backgroundColor:"transparent"}}className="hc vc">
+              <div style={{display:"flex",justifyContent:"flex-end",width:"35%"}} >
+              <img src={require('../images/gradfacemasked.png')} style={{maxHeight:"25vmin",maxWidth:"25vmin"}} className="img-circle unselectable" /></div>
               <div style={{width:"50%"}}>
-              <h1 className="unselectable" style={{fontSize:"5vw",color:"white",textShadow:"0px 0px 4px #000000"}}>
+              <h1 className="unselectable" style={{fontSize:"7vmin",color:"white",textShadow:"0px 0px 4px #000000"}}>
               <Typist>
                 student.<br/>developer.
               </Typist></h1></div>
