@@ -3,7 +3,7 @@ import { Document, Page,pdfjs } from 'react-pdf';
 import './App.css';
 import resume from "../files/Resume.pdf";
 import {Link, withAssetPrefix} from "gatsby";
-import Img from "gatsby-image"
+import BackgroundImage from "gatsby-background-image"
 import Typist from 'react-typist';
 import "react-typist/dist/Typist.css";
 import Jumbotron from 'react-bootstrap/Jumbotron'
@@ -15,7 +15,7 @@ class Parallax extends Component
   render()
   {
     return(
-      <div style={{backgroundImage:`url('${require('../images/bg.jpg')}')`}} className="parallax">
+      <BackgroundImage fluid={this.props.data.imageOne.childImageSharp.fluid} className="parallax">
         {/*<img src={require('../images/jsicon.png')} style={{maxHeight: '20%',maxWidth:'20%', position: 'absolute'}} />*/}
         <div className="unselectable jsicon">
           {"{js}"}
@@ -24,7 +24,9 @@ class Parallax extends Component
           <Jumbotron style={{height: '50%',width:"100%",alignItems:"flex-end",backgroundColor:"transparent"}}className="hc vc">
                 {/*
                 <img src={require('../images/gradfacemasked.png')} style={{maxHeight:"25vmin",maxWidth:"25vmin"}} className="img-circle unselectable" />*/}
-                <Img style={{width:"50%",justifyContent:"flex-end"}} imgStyle={{width:"35vmin"}}fluid={this.props.data.imageOne.childImageSharp.fluid}/>
+              <div style={{display:"flex",justifyContent:"flex-end",width:"50%"}} >
+                <img src={require('../images/gradfacemasked.png')} style={{maxHeight:"30vmin",maxWidth:"30vmin"}} className="img-circle unselectable" />
+              </div>
               <div style={{width:"50%"}}>
               <h1 className="unselectable" style={{fontSize:"7vmin",color:"white",textShadow:"0px 0px 4px #000000"}}>
               <Typist>
@@ -50,7 +52,7 @@ class Parallax extends Component
             <a href="https://www.instagram.com/jack_stro/" className="icon"><i className="fab fa-instagram" aria-hidden="true"></i></a>
           </div>
         </div>
-      </div>);
+      </BackgroundImage>);
   }
 }
 
