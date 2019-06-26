@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import { Document, Page,pdfjs } from 'react-pdf';
 import './App.css';
 import resume from "../files/Resume.pdf";
-import {Link, withAssetPrefix} from "gatsby";
 import BackgroundImage from "gatsby-background-image"
 import Typist from 'react-typist';
 import "react-typist/dist/Typist.css";
 import Jumbotron from 'react-bootstrap/Jumbotron'
+import Image from 'react-bootstrap/Image'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -15,26 +15,26 @@ class Parallax extends Component
   render()
   {
     return(
-      <BackgroundImage fluid={this.props.data.imageOne.childImageSharp.fluid} className="parallax">
+      <BackgroundImage onLoad={this.startTyping}fluid={this.props.data.imageOne.childImageSharp.fluid} className="parallax">
         {/*<img src={require('../images/jsicon.png')} style={{maxHeight: '20%',maxWidth:'20%', position: 'absolute'}} />*/}
         <div className="unselectable jsicon">
           {"{js}"}
         </div>
         <div style={{height:"100%",margin:'0px',padding:'0px'}}>
-          <Jumbotron style={{height: '50%',width:"100%",alignItems:"flex-end",backgroundColor:"transparent"}}className="hc vc">
+          <div style={{height: '50%',width:"100%",alignItems:"flex-end",backgroundColor:"transparent"}}className="hc vc">
                 {/*
                 <img src={require('../images/gradfacemasked.png')} style={{maxHeight:"25vmin",maxWidth:"25vmin"}} className="img-circle unselectable" />*/}
               <div style={{display:"flex",justifyContent:"flex-end",width:"50%"}} >
-                <img src={require('../images/gradfacemasked.png')} style={{maxHeight:"30vmin",maxWidth:"30vmin"}} className="img-circle unselectable" />
+                <Image src={require('../images/gradfacemasked.png')} roundedCircle style={{maxHeight:"25vmin",maxWidth:"25vmin"}} className="unselectable"/>
               </div>
               <div style={{width:"50%"}}>
               <h1 className="unselectable" style={{fontSize:"7vmin",color:"white",textShadow:"0px 0px 4px #000000"}}>
-              <Typist>
-                student.<br/>developer.
+              <Typist startDelay={1000} avgTypingDelay={150} stdTypingDelay={50}>
+                student.<br/><Typist.Delay ms={500}/>developer.
               </Typist></h1></div>
-          </Jumbotron>
+          </div>
           <div style={{flexBasis:"100%",height:"0"}}></div>
-          <div style={{marginTop:"2%"}}className="hc">
+          <div style={{marginTop:"2vmin"}}className="hc">
             <a className="icon" onClick={()=>this.props.toggleModalRef()}>
               <i title="Resume" className="fas fa-id-card"/>
             </a>

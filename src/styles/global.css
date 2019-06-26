@@ -2,6 +2,9 @@ body
 {
     margin:0;
     padding:0;
+    font-family: 'Source Code Pro', monospace !important;
+    width:100vw;
+    height:100vh;
 }
 .vc 
 {
@@ -32,19 +35,20 @@ body
   margin:0;
   margin-left:.6vh;
   margin-right:.6vh;
-  color:white;
+  color:white !important;
   font-size:6vh;
   cursor:pointer;
   text-shadow:2px 2px 2px black;
 }
 .icon:hover
 {
-  color:black;
+  color:black !important;
 }
 .icon:active
 {
   transform:translateY(4px);
 }
+.icon:focus { outline: 0; }
 
 #index {
   opacity: 1;
