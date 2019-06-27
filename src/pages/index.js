@@ -8,18 +8,14 @@ class IndexPage extends React.Component
   {
     super();
 
-    this.state={show:false,data:{data}};
-  }
-  componentDidMount()
-  {
-    setTimeout(()=>{this.setState({show:true});},1000);
+    this.data = {data};
   }
   render()
   {
   return(
     <div>
       <Head/>
-      <App data={this.state.data.data}/>
+      <App data={this.data.data}/>
     </div>);
   }
 }

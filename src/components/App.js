@@ -14,8 +14,8 @@ class Parallax extends Component
 {
   render()
   {
-    return(
-      <BackgroundImage onLoad={this.startTyping}fluid={this.props.data.imageOne.childImageSharp.fluid} className="parallax">
+      return(
+      <BackgroundImage fluid={this.props.data.imageOne.childImageSharp.fluid} className="parallax">
         {/*<img src={require('../images/jsicon.png')} style={{maxHeight: '20%',maxWidth:'20%', position: 'absolute'}} />*/}
         <div className="unselectable jsicon">
           {"{js}"}
