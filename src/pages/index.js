@@ -1,7 +1,7 @@
 import React from "react"
 import App from '../components/App.js'
 import Head from "../components/Head.js"
-import Img from "gatsby-image"
+import {graphql} from 'gatsby';
 class IndexPage extends React.Component
 {
   constructor({data})
