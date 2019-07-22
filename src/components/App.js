@@ -1,13 +1,16 @@
 import React, {Component} from 'react';
 import './App.css';
-import resume from "../files/Resume.pdf";
 import BackgroundImage from "gatsby-background-image"
 import Typist from 'react-typist';
 import "react-typist/dist/Typist.css";
+import resume from '../files/Resume.pdf';
 import Image from 'react-bootstrap/Image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faIdCard,faTimes } from '@fortawesome/free-solid-svg-icons'
 import {faGithub,faLinkedin,faFacebook,faTwitter,faInstagram} from '@fortawesome/free-brands-svg-icons';
+import ResponsiveEmbed from 'react-bootstrap/ResponsiveEmbed'
+import { Document, Page } from 'react-pdf';
+import Modal from 'react-bootstrap/Modal'
 
 class Icon extends Component
 {
@@ -64,25 +67,25 @@ class Parallax extends Component
 
 class DocModal extends Component
 {
+  constructor()
+  {
+    super();
+  }
   render()
   {
-    if(!this.props.show) return null;
     return(
-      <div style={{position:"absolute",top:0,height:"100vh",width:"100vw"}} className="vc hc">
-        <embed src={resume} style={{overflow:"hidden"}}className="full" scrolling="no" toolbar="no"/>
-          <button className ="icon" style={{position:"absolute",top:"2vmin",right:"2vmin",zIndex:"10"}} onClick={()=>this.props.toggleModalRef()}>
-            <FontAwesomeIcon icon={faTimes} style={{color:"red"}}/>
-          </button>
-        {/*
-      <Document onLoadError={console.error} renderMode="canvas" file={resume} className="full">
-      
-        <Page pageNumber={1} renderMode="canvas" className="full">
-          <button className ="icon" style={{position:"absolute",top:"0",right:"0",zIndex:"10"}} onClick={()=>this.props.toggleModalRef()}>
-            <FontAwesomeIcon icon={faTimes} style={{color:"red"}}/>
-          </button>
-        </Page>
-        </Document>*/}
-      </div>
+      <Modal show={this.props.show} onHide={this.props.toggleModalRef} onShow={this.handleShow}size="lg" centered>
+        <Modal.Header closeButton>
+          <Modal.Title></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <ResponsiveEmbed>
+            <Document file={resume}>
+              <Page ref={this.page} style={{position:"relative"}} pageNumber={1}/>
+            </Document>
+          </ResponsiveEmbed>
+        </Modal.Body>
+      </Modal>
     );
   }
 }
