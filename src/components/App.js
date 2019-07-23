@@ -11,6 +11,7 @@ import {faGithub,faLinkedin,faFacebook,faTwitter,faInstagram} from '@fortawesome
 import ResponsiveEmbed from 'react-bootstrap/ResponsiveEmbed'
 import { Document, Page } from 'react-pdf';
 import Modal from 'react-bootstrap/Modal'
+import Container from 'react-bootstrap/Container'
 
 class Icon extends Component
 {
@@ -70,18 +71,20 @@ class DocModal extends Component
   constructor()
   {
     super();
+    this.embed = React.createRef();
   }
+
   render()
   {
     return(
-      <Modal show={this.props.show} onHide={this.props.toggleModalRef} onShow={this.handleShow}size="lg" centered>
+      <Modal show={this.props.show} onHide={this.props.toggleModalRef} size="lg" centered>
         <Modal.Header closeButton>
           <Modal.Title></Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <ResponsiveEmbed>
-            <Document file={resume}>
-              <Page ref={this.page} style={{position:"relative"}} pageNumber={1}/>
+            <Document file={resume} style={{maxWidth:"100%",maxHeight:"100%"}}>
+              <Page pageNumber={1}/>
             </Document>
           </ResponsiveEmbed>
         </Modal.Body>
