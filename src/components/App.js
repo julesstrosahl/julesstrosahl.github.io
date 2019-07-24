@@ -6,12 +6,8 @@ import "react-typist/dist/Typist.css";
 import resume from '../files/Resume.pdf';
 import Image from 'react-bootstrap/Image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faIdCard,faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faIdCard } from '@fortawesome/free-solid-svg-icons'
 import {faGithub,faLinkedin,faFacebook,faTwitter,faInstagram} from '@fortawesome/free-brands-svg-icons';
-import ResponsiveEmbed from 'react-bootstrap/ResponsiveEmbed'
-import { Document, Page } from 'react-pdf';
-import Modal from 'react-bootstrap/Modal'
-import Container from 'react-bootstrap/Container'
 
 class Icon extends Component
 {
@@ -48,13 +44,10 @@ class Parallax extends Component
           </div>
           <div style={{flexBasis:"100%",height:"0"}}></div>
           <div style={{marginTop:"2vmin"}}className="hc">
-            <div className="icon" onClick={()=>this.props.toggleModalRef()}>
-              <FontAwesomeIcon icon={faIdCard}/>
-              <span class="sr-only">Résumé</span>
-            </div>
+            <Icon title="Résumé" link={resume} fa={faIdCard}/>
           </div>
           <div style={{flexBasis:"100%",height:"0"}}></div>
-          <div style={{marginTop:"1%"}}className="hc">
+          <div style={{marginTop:"2vmin"}}className="hc">
             <Icon title="GitHub" link="https://github.com/jackstrosahl" fa={faGithub}/>
             <Icon title="LinkedIn" link="https://www.linkedin.com/in/jack-strosahl/" fa={faLinkedin}/>
             <Icon title="Facebook" link="https://www.facebook.com/strosahl" fa={faFacebook}/>
@@ -66,47 +59,11 @@ class Parallax extends Component
   }
 }
 
-class DocModal extends Component
-{
-  constructor()
-  {
-    super();
-    this.embed = React.createRef();
-  }
-
-  render()
-  {
-    return(
-      <Modal show={this.props.show} onHide={this.props.toggleModalRef} size="lg" centered>
-        <Modal.Header closeButton>
-          <Modal.Title></Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <ResponsiveEmbed>
-            <Document file={resume} style={{maxWidth:"100%",maxHeight:"100%"}}>
-              <Page pageNumber={1}/>
-            </Document>
-          </ResponsiveEmbed>
-        </Modal.Body>
-      </Modal>
-    );
-  }
-}
-
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {showModal:false};
-  }
-  toggleModal()
-  {
-    this.setState({showModal:!this.state.showModal});
-  }
   render() {
   return (
     <div>
       <Parallax data={this.props.data} toggleModalRef={()=>this.toggleModal()}/>
-      <DocModal show = {this.state.showModal} toggleModalRef={()=>this.toggleModal()}/>
     </div>);
   }
 }
