@@ -27,7 +27,7 @@ class Parallax extends Component
   render()
   {
       return(
-      <BackgroundImage fluid={this.props.data.imageOne.childImageSharp.fluid} className="parallax">
+      <BackgroundImage fluid={this.props.data.imageOne.childImageSharp.fixed} className="parallax">
         <div className="unselectable jsicon">
           {"{js}"}
         </div>
