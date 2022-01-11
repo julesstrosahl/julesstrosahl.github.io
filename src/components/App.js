@@ -7,7 +7,7 @@ import resume from '../files/Resume.pdf';
 import Image from 'react-bootstrap/Image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faIdCard } from '@fortawesome/free-solid-svg-icons'
-import {faGithub,faLinkedin,faFacebook,faTwitter,faInstagram} from '@fortawesome/free-brands-svg-icons';
+import {faGithub,faLinkedin} from '@fortawesome/free-brands-svg-icons';
 
 class Icon extends Component
 {
@@ -33,26 +33,25 @@ class Parallax extends Component
         </div>
         <div style={{height:"100%",margin:'0px',padding:'0px'}}>
           <div style={{height: '50%',width:"100%",alignItems:"flex-end",backgroundColor:"transparent"}}className="hc vc">
-              <div style={{display:"flex",justifyContent:"flex-end",width:"35%"}} >
-                <Image alt="Headshot" src={require('../images/gradfacemasked.png')} roundedCircle style={{maxHeight:"25vmin",maxWidth:"25vmin"}} className="unselectable"/>
+              <div style={{display:"flex",justifyContent:"center", alignItems: "flex-end",width:"35%",flexDirection:"column"}} >
+                <div>
+                <Image alt="Headshot" src={require('../images/headshot.jpg')} roundedCircle style={{maxHeight:"25vmin",maxWidth:"25vmin"}} className="unselectable"/>
+                <h3 style={{fontSize:"3vmin",color:"white", textShadow:"0px 0px 4px black", verticalAlign:"center"}}>Jack Strosahl</h3>
+                </div>
               </div>
-              <div style={{width:"50%"}}>
-              <h1 className="unselectable" style={{fontSize:"7vmin",color:"white",textShadow:"0px 0px 4px #000000"}}>
-              <Typist avgTypingDelay={100}>
-                student.<Typist.Delay ms={250}/><br/>developer.
-              </Typist></h1></div>
+              <div style={{width:"50%",height:"25vmin", display: "flex", alignItems:"center", marginLeft:"3vmin"}}>
+                <h1 className="unselectable" style={{fontSize:"7vmin",color:"white",textShadow:"0px 0px 4px #000000"}}>
+                  <Typist avgTypingDelay={100}>
+                    software<Typist.Delay ms={250}/><br/>engineer.
+                  </Typist>
+                </h1>
+              </div>
           </div>
           <div style={{flexBasis:"100%",height:"0"}}></div>
           <div style={{marginTop:"2vmin"}}className="hc">
             <Icon title="Résumé" link={resume} fa={faIdCard}/>
-          </div>
-          <div style={{flexBasis:"100%",height:"0"}}></div>
-          <div style={{marginTop:"2vmin"}}className="hc">
             <Icon title="GitHub" link="https://github.com/jackstrosahl" fa={faGithub}/>
             <Icon title="LinkedIn" link="https://www.linkedin.com/in/jack-strosahl/" fa={faLinkedin}/>
-            <Icon title="Facebook" link="https://www.facebook.com/strosahl" fa={faFacebook}/>
-            <Icon title="Twitter" link="https://twitter.com/JackStrosahl" fa={faTwitter}/>
-            <Icon title="Instagram" link="https://www.instagram.com/jack_stro/" fa={faInstagram}/>
           </div>
         </div>
       </BackgroundImage>);

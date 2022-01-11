@@ -24,7 +24,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
-    imageOne: file(relativePath: { eq: "bg.jpg" }) {
+    imageOne: file(relativePath: { eq: "Madison_Picnic_Point.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 5184) {
           ...GatsbyImageSharpFluid
