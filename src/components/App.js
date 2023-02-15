@@ -16,7 +16,7 @@ class Icon extends Component
     return(
         <a href={this.props.link}className="icon">
           <FontAwesomeIcon icon={this.props.fa}title={this.props.title} aria-hidden="true"/>
-          <span class="sr-only">{this.props.title}</span>
+          <span className="sr-only">{this.props.title}</span>
         </a>
     );
   }
