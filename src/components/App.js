@@ -4,6 +4,7 @@ import BackgroundImage from "gatsby-background-image"
 import Typist from 'react-typist';
 import "react-typist/dist/Typist.css";
 import resume from '../files/Resume.pdf';
+import headshot from '../images/headshot.jpg';
 import Image from 'react-bootstrap/Image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faIdCard } from '@fortawesome/free-solid-svg-icons'
@@ -35,7 +36,7 @@ class Parallax extends Component
           <div style={{height: '50%',width:"100%",alignItems:"flex-end",backgroundColor:"transparent"}}className="hc vc">
               <div style={{display:"flex",justifyContent:"center", alignItems: "flex-end",width:"35%",flexDirection:"column"}} >
                 <div>
-                <Image alt="Headshot" src={require('../images/headshot.jpg')} roundedCircle style={{maxHeight:"25vmin",maxWidth:"25vmin"}} className="unselectable"/>
+                <Image alt="Headshot" src={headshot} roundedCircle style={{maxHeight:"25vmin",maxWidth:"25vmin"}} className="unselectable"/>
                 <h3 style={{fontSize:"3vmin",color:"white", textShadow:"0px 0px 4px black", verticalAlign:"center"}}>Jack Strosahl</h3>
                 </div>
               </div>
