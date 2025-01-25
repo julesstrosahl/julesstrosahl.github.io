@@ -7,7 +7,7 @@ class Head extends React.Component {
         <div>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Jack Strosahl</title>
+                <title>Jules Strosahl</title>
             </Helmet>
         </div>
     );

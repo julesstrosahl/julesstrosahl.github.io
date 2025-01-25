@@ -37,7 +37,7 @@ class Parallax extends Component
               <div style={{display:"flex",justifyContent:"center", alignItems: "flex-end",width:"35%",flexDirection:"column"}} >
                 <div>
                 <Image alt="Headshot" src={headshot} roundedCircle style={{maxHeight:"25vmin",maxWidth:"25vmin"}} className="unselectable"/>
-                <h3 style={{fontSize:"3vmin",color:"white", textShadow:"0px 0px 4px black", verticalAlign:"center"}}>Jack Strosahl</h3>
+                <h3 style={{fontSize:"3vmin",color:"white", textShadow:"0px 0px 4px black", verticalAlign:"center"}}>Jules Strosahl</h3>
                 </div>
               </div>
               <div style={{width:"50%",height:"25vmin", display: "flex", alignItems:"center", marginLeft:"3vmin"}}>
@@ -51,8 +51,8 @@ class Parallax extends Component
           <div style={{flexBasis:"100%",height:"0"}}></div>
           <div style={{marginTop:"2vmin"}}className="hc">
             <Icon title="Résumé" link={resume} fa={faIdCard}/>
-            <Icon title="GitHub" link="https://github.com/jackstrosahl" fa={faGithub}/>
-            <Icon title="LinkedIn" link="https://www.linkedin.com/in/jack-strosahl/" fa={faLinkedin}/>
+            <Icon title="GitHub" link="https://github.com/julesstrosahl" fa={faGithub}/>
+            <Icon title="LinkedIn" link="https://www.linkedin.com/in/JulesStrosahl/" fa={faLinkedin}/>
           </div>
         </div>
       </BackgroundImage>);

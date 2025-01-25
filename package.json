@@ -3,7 +3,7 @@
   "private": true,
   "description": "Personal, professional site.",
   "version": "0.1.0",
-  "author": "Jack Strosahl <jack@strosahl.org>",
+  "author": "Jules Strosahl <jules@strosahl.org>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
     "@fortawesome/free-brands-svg-icons": "^6.3.0",
@@ -15,7 +15,7 @@
     "gatsby-cli": "^5.6.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.6.0",
-    "gatsby-plugin-offline": "^6.6.0",
+    "gatsby-plugin-offline": "^1.0.18",
     "gatsby-plugin-react-helmet": "^6.6.0",
     "gatsby-plugin-sharp": "^5.6.0",
     "gatsby-source-filesystem": "^5.6.0",
