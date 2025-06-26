@@ -2,6 +2,9 @@ import React from "react"
 import App from '../components/App.js'
 import Head from "../components/Head.js"
 import {graphql} from 'gatsby';
+
+import "../styles/global.css"
+import "bootstrap/dist/css/bootstrap.min.css"
 class IndexPage extends React.Component
 {
   constructor({data})
